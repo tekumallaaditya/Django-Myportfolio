@@ -2,6 +2,78 @@
 
 {% block content %}
 
-<h1>This is my profile page!</h1>
+<div class="container-fluid">
+    <br/>
+    <h1 class="lead text-muted text-center">Below are my Professional, Educational and project details!</h1>
+
+    <!-- Jumbotron for Work experience starts -->
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="jumbotron-heading text-center">Work Experience!</h1>
+        <p class="lead text-muted text-center">Below is the summary of my work experience starting from the latest</p>
+        <hr class="my-4">
+
+       {% for work in work.all %}
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#{{ work.title }}" aria-expanded="true" aria-controls="collapseOne">
+                  {{ work.title }}
+                </button>
+              </h5>
+            </div>
+
+            <div id="{{ work.title }}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+                <p>Start Date: {{ work.start }}</p>
+                {% if work.end %}
+                  <p>End Date: {{ work.end }}</p>
+                {% else %}
+                <p> Currently Employed</p>
+                {% endif %}
+                <p>{{ work.summary }}</p>
+              </div>
+            </div>
+          </div>
+
+       {% endfor %}
+    </div>
+    </div>
+
+    <!-- Jumbotron for Work experience ends -->
+    <!-- Jumbotron for educational detail starts -->
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="jumbotron-heading text-center">Educational Details!</h1>
+        <p class="lead text-muted text-center">Below is the summary of my Educational qualifications!</p>
+        <hr class="my-4">
+
+       {% for edu in edu_details.all %}
+        <div id="accordion1">
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#{{ edu.title }}" aria-expanded="true" aria-controls="collapseOne">
+                  {{ edu.title }}
+                </button>
+              </h5>
+            </div>
+
+            <div id="{{ edu.title}}" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion1">
+              <div class="card-body">
+                <p>Start Date: {{ edu.start }}</p>
+                <p>End Date: {{ edu.end }}</p>
+                <p>{{ edu.summary }}</p>
+              </div>
+            </div>
+          </div>
+
+       {% endfor %}
+      </div>
+    </div>
+
+    <!-- Jumbotron for educational detail ends -->
+
+</div>
+
 
 {% endblock %}
