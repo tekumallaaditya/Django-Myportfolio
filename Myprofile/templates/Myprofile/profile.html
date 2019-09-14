@@ -72,6 +72,21 @@
     </div>
 
     <!-- Jumbotron for educational detail ends -->
+    <!-- Jumbotron for Skills starts -->
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="jumbotron-heading text-center">Software Skills!</h1>
+        <p class="lead text-muted text-center">Below is the summary of my Software Skills!</p>
+        <hr class="my-4">
+      {% for skill in skills.all %}
+      <ul class="colums" data-colums="2">
+        <li>{{ skill }}</li>
+      </ul>
+
+       {% endfor %}
+      </div>
+    </div>
+
+    <!-- Jumbotron for Skills ends -->
 
 </div>
 
