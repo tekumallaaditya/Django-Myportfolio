@@ -1,0 +1,40 @@
+{% extends 'home/basic.html' %}
+
+{% block content %}
+
+<div class="container container-fluid">
+    <div class="row jumbotron jumbotron-fluid">
+        <div class="col-4">
+            <a class="fa fa-linkedin-square" target="_blank" href="https://www.linkedin.com/in/aditya-tekumalla-99b93233/" style="font-size:48px; padding-left:20%"></a>
+        </div>
+        <div class="col-4">
+            <a class="fa fa-github" target="_blank" href="https://github.com/tekumallaaditya?tab=repositories" style="font-size:48px;color:black;  padding-left:20%"></a>
+        </div>
+        <div class="col-4">
+            <a class="fa fa-google" data-toggle="modal" data-target="#myModal" href="mailto:tekumallaaditya@gmail.com" style="font-size:48px;color:red;  padding-left:20%"></a>
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Email information!</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>Email to: tekumallaaditya@gmail.com</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

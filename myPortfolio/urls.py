@@ -24,4 +24,5 @@ urlpatterns = [
     path('', home.views.welcome, name='home' ),
     path('Myprofile/', include('Myprofile.urls')),
     path('resume/', include('resume.urls')),
+    path('contact/', include('contact.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

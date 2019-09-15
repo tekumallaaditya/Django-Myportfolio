@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'home',
     'Myprofile',
     'resume',
+    'contact',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -137,3 +138,8 @@ STATIC_URL = '/static/'
 #Below is the media url and root
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
